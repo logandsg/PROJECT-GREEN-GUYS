@@ -5,6 +5,7 @@ const {
   getAllUsers,
   getUser,
   updateUser,
+  // updateProfile,
   deleteUser
 } = require('../controllers/users.controller')
 
@@ -13,7 +14,7 @@ userRouter
   .get('/', getAllUsers)
   .get('/:userId', getUser)
   .put('/:userId', updateUser)
+  // .put('/me', updateProfile)
   .delete('/:userId', deleteUser)
-  .delete('/me', deleteUser)
 
 exports.userRouter = userRouter

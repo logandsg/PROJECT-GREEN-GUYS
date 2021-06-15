@@ -17,20 +17,20 @@ exports.getAllUsers = (req, res) => {
 exports.getUser = (req, res) => {
   UserModel
     .findById(req.params.userId)
-    .then((user) => res.json(user))
+    .then((user) => res.status(200).json(user))
     .catch((err) => res.json(err))
 }
 
 exports.updateUser = (req, res) => {
   UserModel
     .findByIdAndUpdate(req.params.userId, req.body)
-    .then((result) => res.json(result))
+    .then((result) => res.status(200).json(result))
     .catch((err) => res.json(err))
 }
 
 exports.deleteUser = (req, res) => {
   UserModel
     .findByIdAndDelete(req.params.id)
-    .then((result) => res.json(result))
+    .then((result) => res.status(200).json(result))
     .catch((err) => res.json(err))
 }
